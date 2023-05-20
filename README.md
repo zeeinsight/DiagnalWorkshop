@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Content Listing Page - ReactJS Workshop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Test v2.0
+Reactjs Workshop
+DIAGNAL Technologies Pvt Ltd
+
+## Project Description
+This project is part of a ReactJS workshop conducted by DIAGNAL Technologies Pvt Ltd. The goal of the workshop is to develop a mobile browser version of the content listing page using ReactJS with Redux for state management. The project focuses on implementing lazy loading of contents, client-side search functionality, and monitoring virtual DOM rendering to optimize performance.
+
+
+
+## Getting Started
+
+To run the application locally, follow these steps:
+
+1. Clone the repository: git clone <repository-url>
+
+2. Install the dependencies: npm install
+
+3. Start the development server: npm start
+
+
+
+The application will be running at [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+The project consists of the following files and directories:
+
+- `ContentListingPage.js`: The main component that renders the content listing page.
+- `actions.js`: Contains Redux action creators for fetching contents and setting search queries.
+- `reducer.js`: Redux reducer for managing the state of the application.
+- `index.js`: Entry point of the application that renders the main `App` component.
+- `App.js`: `App` includes the ContentListingPage component
+- `App.css`: CSS file containing styles for the application.
+- `package.json`: Contains the project's metadata and dependencies.
+
+## Dependencies
+
+The project relies on the following dependencies:
+
+- React: A JavaScript library for building user interfaces.
+- React DOM: Provides methods for rendering React components in the DOM.
+- React Redux: Official React bindings for Redux.
+- Redux: A predictable state container for JavaScript applications.
+- Redux Thunk: Middleware for Redux that allows writing async logic.
+- react-flexbox-grid: A grid system based on flexbox for responsive layouts.
+- react-scripts: Scripts and configuration for React app development.
+- Tailwind CSS: A utility-first CSS framework.
+- Other testing and development dependencies.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following scripts:
 
-### `npm start`
+- `npm start`: Starts the development server.
+- `npm build`: Builds the app for production.
+- `npm test`: Runs tests using the test runner.
+- `npm eject`: Ejects the create-react-app configuration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contributing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Contributions to the project are welcome. Before submitting a pull request, please ensure that your code follows the project's coding style and conventions.
 
-### `npm test`
+## License
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is licensed under the [MIT License](LICENSE).
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
