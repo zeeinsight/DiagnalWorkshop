@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dagnal-workshop-live-project/static/css/main.552fcccd.css",
+    "main.js": "/dagnal-workshop-live-project/static/js/main.e1b4738e.js",
+    "index.html": "/dagnal-workshop-live-project/index.html",
+    "main.552fcccd.css.map": "/dagnal-workshop-live-project/static/css/main.552fcccd.css.map",
+    "main.e1b4738e.js.map": "/dagnal-workshop-live-project/static/js/main.e1b4738e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.552fcccd.css",
+    "static/js/main.e1b4738e.js"
+  ]
+}
