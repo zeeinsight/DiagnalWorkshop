@@ -59,11 +59,11 @@ const ContentListingPage = () => {
   const gridItemStyles = {
     width: "100%",
     marginBottom: "1.5rem",
-    "@media (min-width: 576px)": {
+    "@media (minwidth: 576px)": {
       width: "calc(50% - 15px)",
       marginBottom: "30px",
     },
-    "@media (min-width: 768px)": {
+    "@media (minWidth: 768px)": {
       width: "calc(33.33% - 20px)",
     },
   };
