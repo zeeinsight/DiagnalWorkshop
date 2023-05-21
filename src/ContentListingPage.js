@@ -143,18 +143,32 @@ const ContentListingPage = () => {
     dispatch(setSearchQuery("")); // Reset search query when closing the search
   };
 
+  const handleBackButtonClick = () => {
+    setIsSearchOpen(false);
+    dispatch(setSearchQuery("")); // Reset search query when closing the search
+  };
+
   return (
     <div style={containerStyles} className="text-gray-500">
       <main style={mainColor} className="p-4 mt-16 overflow-y-auto">
         <header style={headerStyles}>
           {isSearchOpen ? (
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearch}
-              style={searchInputStyles}
-              placeholder="Search..."
-            />
+            <>
+              <img
+                src={backIcon}
+                alt="Back"
+                style={backIconStyles}
+                className="mr-2"
+                onClick={handleBackButtonClick}
+              />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearch}
+                style={searchInputStyles}
+                placeholder="Search..."
+              />
+            </>
           ) : (
             <div style={titleAndArrow}>
               <img
