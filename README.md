@@ -7,7 +7,9 @@ DIAGNAL Technologies Pvt Ltd
 ## Project Description
 This project is part of a ReactJS workshop conducted by DIAGNAL Technologies Pvt Ltd. The goal of the workshop is to develop a mobile browser version of the content listing page using ReactJS with Redux for state management. The project focuses on implementing lazy loading of contents, client-side search functionality, and monitoring virtual DOM rendering to optimize performance.
 
-
+## LIVE DEMO
+This project is deployed to GH Pages for LIVE DEMO. Checkout the below link
+https://zeeinsight.github.io/DiagnalWorkshop/
 
 ## Getting Started
 
