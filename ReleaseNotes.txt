@@ -1,0 +1,21 @@
+RELEASE Notes
+Version 1.0.0
+
+1. Initial release of the ContentListingPage component.
+2. Fetches and displays content from an external API based on the current page.
+3. Implements search functionality to filter the displayed content based on a search query.
+4. Implements infinite scrolling to load more content when the user reaches the bottom of the page.
+5. Displays loading indicator while fetching new content.
+6. Displays a message when there is no more content to load.
+7. Provides a responsive layout using the react-flexbox-grid library.
+8. Uses custom styles for various elements, including the header, search input, and content grid items.
+9. Includes back and search icons for user interaction.
+10. Supports sticky header with dynamic styling based on scrolling.
+11. Maintains the search query and search state when closing and opening the search input.
+12. Displays a placeholder image when the poster image is not available.
+13. Ensures consistent visual styling with a dark color scheme.
+14. Maintains state using React hooks (useState, useEffect).
+15. Utilizes Redux for state management, dispatching actions to fetch content and update the search query.
+16. Implements a reducer to handle the dispatched actions and update the state accordingly.
+
+Note: This release includes the initial version of the ContentListingPage component and related actions and reducer. Further improvements and enhancements may be added in future releases.
