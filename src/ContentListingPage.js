@@ -77,6 +77,11 @@ const ContentListingPage = () => {
     color: "#DDDDDD",
     margin: "2px 0px 0px 0px",
     fontSize: "14px",
+    display: "-webkit-box",
+    WebkitLineClamp: 1,
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   };
 
   const containerStyles = {
