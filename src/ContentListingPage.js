@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchContents, setSearchQuery } from "./actions";
 import { Grid, Row, Col } from "react-flexbox-grid";
@@ -14,7 +14,6 @@ const ContentListingPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const searchInputRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchContents(currentPage));
@@ -154,12 +153,6 @@ const ContentListingPage = () => {
 
   const searchHint = "Search...";
 
-  useEffect(() => {
-    if (isSearchOpen) {
-      searchInputRef.current.focus();
-    }
-  }, [isSearchOpen]);
-
   return (
     <div style={containerStyles} className="text-gray-500">
       <main style={mainColor} className="p-4 mt-16 overflow-y-auto">
@@ -179,7 +172,6 @@ const ContentListingPage = () => {
                 onChange={handleSearch}
                 style={searchInputStyles}
                 placeholder={searchHint}
-                ref={searchInputRef}
               />
             </>
           ) : (
