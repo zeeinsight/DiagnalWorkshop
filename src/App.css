@@ -1,5 +1,5 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .grid-container {
@@ -9,8 +9,8 @@ body {
 }
 
 .grid-item {
-  width: calc(100% / 3 - 10px); /* Adjust the width as needed */
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  width: calc(100% / 3 - 10px); 
+  margin-bottom: 20px; 
 }
 
 @media (max-width: 767px) {

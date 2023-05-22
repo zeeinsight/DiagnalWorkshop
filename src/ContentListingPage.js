@@ -14,21 +14,26 @@ const ContentListingPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLastPage, setIsLastPage] = useState(false);
 
+  // Fetch initial content on component mount and when the currentPage changes
   useEffect(() => {
     dispatch(fetchContents(currentPage));
   }, [dispatch, currentPage]);
 
+  // Handle search input change
   const handleSearch = (event) => {
     const query = event.target.value;
     dispatch(setSearchQuery(query));
   };
 
+  // Filter contents based on search query
   const filteredContents = contents.filter((content) => {
     const title = content?.name ?? "";
     return title.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
+  // Handle scroll event to load more content when user is close to the bottom
   useEffect(() => {
     document.body.style.backgroundColor = "#FFFFFF";
 
@@ -38,24 +43,33 @@ const ContentListingPage = () => {
       const isAtBottom = scrollTop + clientHeight >= scrollHeight - 20; // Check if user is close to the bottom
       setIsScrolled(window.pageYOffset > 0);
 
-      if (isAtBottom && !isSearchOpen && currentPage < 3 && !isLoading) {
+      // Load next page of content if not searching, not loading, and not on the last page
+      if (isAtBottom && !isSearchOpen && !isLoading && !isLastPage) {
         setIsLoading(true);
-        setCurrentPage((prevPage) => prevPage + 1); // Load next page of data
+        setCurrentPage((prevPage) => prevPage + 1);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
+    // Clean up event listener on component unmount
     return () => {
       document.body.style.backgroundColor = "";
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isSearchOpen, currentPage, isLoading]);
+  }, [isSearchOpen, isLoading, isLastPage]);
 
+  // Reset isLoading state when contents change
   useEffect(() => {
     setIsLoading(false);
   }, [contents]);
 
+  // Determine if it is the last page based on currentPage
+  useEffect(() => {
+    setIsLastPage(currentPage >= 3); // Assuming the last page is 3
+  }, [currentPage]);
+
+  // CSS styles
   const gridItemStyles = {
     width: "100%",
     marginBottom: "1.5rem",
@@ -98,7 +112,7 @@ const ContentListingPage = () => {
     backgroundColor: "#171717",
   };
 
-  const titleAndArrow = {
+  const titleAndArrowStyles = {
     display: "flex",
     alignItems: "center",
   };
@@ -146,11 +160,13 @@ const ContentListingPage = () => {
     fontSize: "18px",
   };
 
+  // Handle click event for search icon
   const handleSearchIconClick = () => {
     setIsSearchOpen(!isSearchOpen);
     dispatch(setSearchQuery("")); // Reset search query when closing the search
   };
 
+  // Handle click event for back button
   const handleBackButtonClick = () => {
     setIsSearchOpen(false);
     dispatch(setSearchQuery("")); // Reset search query when closing the search
@@ -180,7 +196,7 @@ const ContentListingPage = () => {
               />
             </>
           ) : (
-            <div style={titleAndArrow}>
+            <div style={titleAndArrowStyles}>
               <img
                 src={backIcon}
                 alt="Back"
@@ -218,6 +234,14 @@ const ContentListingPage = () => {
             ))}
           </Row>
         </Grid>
+        {isLoading && (
+          <p style={{ color: "#FFFFFF", textAlign: "center" }}>Loading...</p>
+        )}
+        {isLastPage && (
+          <p style={{ color: "#FFFFFF", textAlign: "center" }}>
+            No more content to load.
+          </p>
+        )}
       </main>
     </div>
   );
