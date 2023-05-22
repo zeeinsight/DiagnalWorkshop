@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/DiagnalWorkshop/static/css/main.d4512625.css",
-    "main.js": "/DiagnalWorkshop/static/js/main.de8378a9.js",
+    "main.js": "/DiagnalWorkshop/static/js/main.d4811f66.js",
     "index.html": "/DiagnalWorkshop/index.html",
     "main.d4512625.css.map": "/DiagnalWorkshop/static/css/main.d4512625.css.map",
-    "main.de8378a9.js.map": "/DiagnalWorkshop/static/js/main.de8378a9.js.map"
+    "main.d4811f66.js.map": "/DiagnalWorkshop/static/js/main.d4811f66.js.map"
   },
   "entrypoints": [
     "static/css/main.d4512625.css",
-    "static/js/main.de8378a9.js"
+    "static/js/main.d4811f66.js"
   ]
 }
