@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchContents, setSearchQuery } from "./actions";
 import { Grid, Row, Col } from "react-flexbox-grid";
@@ -14,6 +14,7 @@ const ContentListingPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const searchInputRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchContents(currentPage));
@@ -116,13 +117,13 @@ const ContentListingPage = () => {
   const backIconStyles = {
     width: "1.2rem",
     height: "1.2rem",
-    cursor: "pointer", 
+    cursor: "pointer",
   };
 
   const searchIconStyles = {
     width: "1.2rem",
     height: "1.2rem",
-    cursor: "pointer", 
+    cursor: "pointer",
   };
 
   const searchInputStyles = {
@@ -132,6 +133,7 @@ const ContentListingPage = () => {
     backgroundColor: "#FFFFFF",
     borderRadius: "4px",
     border: "1px solid #CCCCCC",
+    fontStyle: searchQuery ? "normal" : "italic",
   };
 
   const titleStyles2 = {
@@ -149,6 +151,14 @@ const ContentListingPage = () => {
     setIsSearchOpen(false);
     dispatch(setSearchQuery("")); // Reset search query when closing the search
   };
+
+  const searchHint = "Search...";
+
+  useEffect(() => {
+    if (isSearchOpen) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchOpen]);
 
   return (
     <div style={containerStyles} className="text-gray-500">
@@ -168,7 +178,8 @@ const ContentListingPage = () => {
                 value={searchQuery}
                 onChange={handleSearch}
                 style={searchInputStyles}
-                placeholder="Search..."
+                placeholder={searchHint}
+                ref={searchInputRef}
               />
             </>
           ) : (
