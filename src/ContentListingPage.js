@@ -193,6 +193,7 @@ const ContentListingPage = () => {
                 onChange={handleSearch}
                 style={searchInputStyles}
                 placeholder={searchHint}
+                autoFocus // Add the autoFocus attribute here
               />
             </>
           ) : (
